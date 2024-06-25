@@ -42,7 +42,7 @@ public class BuidingAPI {
 //	}
 	@RequestMapping(value = "api/building/", method = RequestMethod.POST)
 	public void getBuilding1(@RequestBody BuildingDTO buildingDTO) { // key trong api/building/ phai trung voi thuoc tinh cua Building
-		System.out.println("ok");
+		System.out.println("okkk");
 		System.out.println(buildingDTO.toString());
 	}
 	@DeleteMapping (value = "api/building/{id}/{name}") // {id} => bat buoc phai co id truyen len tu client 
