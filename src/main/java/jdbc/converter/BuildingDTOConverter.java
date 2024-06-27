@@ -36,7 +36,7 @@ public class BuildingDTOConverter {
 //		result.setBrokerageFee(buildingEntity.getBrokeragefee());
 //		result.setEmptyArea(null);
 //		result.setFloorArea(buildingEntity.getFloorArea());
-//		result.setManagerName(null);
+//		result.setManagerName(null); 
 //		result.setName(buildingEntity.getName());
 //		result.setRentPrice(buildingEntity.getRentprice());
 //		result.setServiceFee(buildingEntity.getServicefee());
