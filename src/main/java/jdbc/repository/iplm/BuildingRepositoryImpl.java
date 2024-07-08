@@ -20,13 +20,13 @@ public class BuildingRepositoryImpl implements BuildingReponsitory{
 		String staffId = (String)map.get("staffId");
 		if (StringUtil.checkString(staffId)) {
 			sql.append("INNER JOIN assignmentbuilding ON b.id = assignmentbuilding.buildingid ");
-		}
+		} 
 		if (typeCode != null && typeCode.size() != 0) {
 			sql.append("INNER JOIN buildingrenttype ON b.id = buildingrenttype.buildingid ");
 			sql.append("INNER JOIN renttype ON buildingrenttype.renttypeid = renttype.id ");
 		}
 		String areaFrom = (String)map.get("areaFrom");
-		String areaTo = (String)map.get("areaTo");
+		String areaTo = (String)map.get("areaTo");  
 		if (StringUtil.checkString(areaFrom) || StringUtil.checkString(areaTo)) {
 			sql.append("INNER JOIN rentarea ON b.id = rentarea.buildingid ");
 		}
