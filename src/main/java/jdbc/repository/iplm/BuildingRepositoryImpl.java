@@ -1,6 +1,6 @@
 package jdbc.repository.iplm;
 
-import java.lang.reflect.Field;
+import java.lang.reflect.Field;  
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -45,9 +45,9 @@ public class BuildingRepositoryImpl implements BuildingReponsitory {
 					if (value != null) {
 						if (item.getType().getName().equals("java.lang.Long") || item.getType().getName().equals("java.lang.Integer")
 								|| item.getType().getName().equals("java.lang.Float")) {
-							where.append("AND " + fieldName + " = " + value + " ");
+							where.append("AND b." + fieldName + " = " + value + " ");
 						} else {
-							where.append("AND " + fieldName + " like '%" + value + "%' ");
+							where.append("AND b." + fieldName + " like '%" + value + "%' ");
 						}
 					}
 				}
@@ -75,15 +75,15 @@ public class BuildingRepositoryImpl implements BuildingReponsitory {
 			where.append("AND rentarea.value >= " + areaFrom + " ");
 		}
 		Long areaTo = buildingSearchBuilder.getAreaTo();
-		if (areaFrom != null) {
+		if (areaTo != null) {
 			where.append("AND rentarea.value <= " + areaTo + " ");
 		}
 		Long priceFrom = buildingSearchBuilder.getPriceFrom();
-		if (areaFrom != null) {
+		if (priceFrom != null) {
 			where.append("AND b.rentprice >= " + priceFrom + " ");
 		}
 		Long priceTo = buildingSearchBuilder.getPriceTo();
-		if (areaFrom != null) {
+		if (priceTo != null) {
 			where.append("AND b.rentprice <= " + priceTo + " ");
 		}
 	}
