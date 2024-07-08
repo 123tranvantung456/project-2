@@ -13,13 +13,12 @@ public class BuildingSearchBuilder {
 	private List<String> typeCode= new ArrayList<>();
 	private String managerName;
 	private String managerPhoneNumber;
-	private Long rentPriceFrom;
-	private Long rentPriceTo;
+	private Long priceFrom;
+	private Long priceTo;
 	private Long areaFrom;
 	private Long areaTo;
 	private Long staffId;
 	public BuildingSearchBuilder(Builder builder) {
-		super();
 		this.name = builder.name;
 		this.floorArea = builder.floorArea;
 		this.ward = builder.ward;
@@ -29,8 +28,8 @@ public class BuildingSearchBuilder {
 		this.typeCode = builder.typeCode;
 		this.managerName = builder.managerName;
 		this.managerPhoneNumber = builder.managerPhoneNumber;
-		this.rentPriceFrom = builder.rentPriceFrom;
-		this.rentPriceTo = builder.rentPriceTo;
+		this.priceFrom = builder.priceFrom;
+		this.priceTo = builder.priceTo;
 		this.areaFrom = builder.areaFrom;
 		this.areaTo = builder.areaTo;
 		this.staffId = builder.staffId;
@@ -62,14 +61,14 @@ public class BuildingSearchBuilder {
 	public String getManagerPhoneNumber() {
 		return managerPhoneNumber;
 	}
-	public Long getRentPriceFrom() {
-		return rentPriceFrom;
+	public Long getPriceFrom() {
+		return priceFrom;
 	}
-	public Long getRentPriceTo() {
-		return rentPriceTo;
+	public Long getPriceTo() {
+		return priceTo;
 	}
 	public Long getAreaFrom() {
-		return areaFrom;
+		return areaFrom; 
 	}
 	public Long getAreaTo() {
 		return areaTo;
@@ -87,52 +86,66 @@ public class BuildingSearchBuilder {
 		private List<String> typeCode= new ArrayList<>();
 		private String managerName;
 		private String managerPhoneNumber;
-		private Long rentPriceFrom;
-		private Long rentPriceTo;
+		private Long priceFrom;
+		private Long priceTo;
 		private Long areaFrom;
 		private Long areaTo;
 		private Long staffId;
-		public void setName(String name) {
+		public Builder setName(String name) {
 			this.name = name;
+			return this;
 		}
-		public void setFloorArea(Long floorArea) {
+		public Builder setFloorArea(Long floorArea) {
 			this.floorArea = floorArea;
+			return this;
 		}
-		public void setWard(String ward) {
+		public Builder setWard(String ward) {
 			this.ward = ward;
+			return this;
 		}
-		public void setStreet(String street) {
+		public Builder setStreet(String street) {
 			this.street = street;
+			return this;
 		}
-		public void setDistrictId(Long districtId) {
+		public Builder setDistrictId(Long districtId) {
 			this.districtId = districtId;
+			return this;
 		}
-		public void setNumberOfBasement(Integer numberOfBasement) {
+		public Builder setNumberOfBasement(Integer numberOfBasement) {
 			this.numberOfBasement = numberOfBasement;
+			return this;
 		}
-		public void setTypeCode(List<String> typeCode) {
+		public Builder setTypeCode(List<String> typeCode) {
 			this.typeCode = typeCode;
+			return this;
 		}
-		public void setManagerName(String managerName) {
+		public Builder setManagerName(String managerName) {
 			this.managerName = managerName;
+			return this;
 		}
-		public void setManagerPhoneNumber(String managerPhoneNumber) {
+		public Builder setManagerPhoneNumber(String managerPhoneNumber) {
 			this.managerPhoneNumber = managerPhoneNumber;
+			return this;
 		}
-		public void setRentPriceFrom(Long rentPriceFrom) {
-			this.rentPriceFrom = rentPriceFrom;
+		public Builder setPriceFrom(Long priceFrom) {
+			this.priceFrom = priceFrom;
+			return this;
 		}
-		public void setRentPriceTo(Long rentPriceTo) {
-			this.rentPriceTo = rentPriceTo;
+		public Builder setPriceTo(Long priceTo) {
+			this.priceTo = priceTo;
+			return this;
 		}
-		public void setAreaFrom(Long areaFrom) {
+		public Builder setAreaFrom(Long areaFrom) {
 			this.areaFrom = areaFrom;
+			return this;
 		}
-		public void setAreaTo(Long areaTo) {
+		public Builder setAreaTo(Long areaTo) {
 			this.areaTo = areaTo;
+			return this;
 		}
-		public void setStaffId(Long staffId) {
+		public Builder setStaffId(Long staffId) {
 			this.staffId = staffId;
+			return this;
 		}
 		public BuildingSearchBuilder build() {
 			return new BuildingSearchBuilder(this);

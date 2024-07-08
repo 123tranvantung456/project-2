@@ -10,8 +10,7 @@ import jdbc.model.BuildingDTO;
 import jdbc.service.BuildingService;
 
 @RestController
-public class BuildingAPI {
-	
+public class BuildingAPI {	
 	@Autowired
 	private BuildingService buildingService;
 	@GetMapping(value = "api/test123")
