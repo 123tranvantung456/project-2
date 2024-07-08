@@ -37,10 +37,10 @@ public class BuildingRepositoryImpl implements BuildingReponsitory{
 			if (!item.getKey().equals("staffId") && !item.getKey().equals("typeCode") && !item.getKey().startsWith("area")
 				&& !item.getKey().startsWith("price")) {
 				if(NumberUtil.CheckNumber(item.getKey())) {
-					where.append("AND " + item.getKey() + " = " + item.getValue() + " ");
+					where.append("AND b." + item.getKey() + " = " + item.getValue() + " ");
 				}
 				else {
-					where.append("AND " + item.getKey() + " like '%" + item.getValue() + "%' ");
+					where.append("AND b." + item.getKey() + " like '%" + item.getValue() + "%' ");
 				}
 			}
 		}
