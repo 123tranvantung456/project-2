@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import jdbc.repository.RentAreaRepository;
 import jdbc.repository.entity.RentAreaEntity;
 import jdbc.util.ConnectionUtil;
-@Repository
+@Repository 
 public class RentAreaRepositoryImpl implements RentAreaRepository{
 
 	@Override
@@ -25,9 +25,9 @@ public class RentAreaRepositoryImpl implements RentAreaRepository{
 				RentAreaEntity rentAreaEntity = new RentAreaEntity();
 				rentAreaEntity.setId(resultSet.getLong("id"));
 				rentAreaEntity.setValue(resultSet.getInt("value"));
-				rentAreaEntity.setBuildingid(resultSet.getLong("buildingid"));
+//				rentAreaEntity.setBuildingid(resultSet.getLong("buildingid"));S
 				results.add(rentAreaEntity);
-			}
+			} 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

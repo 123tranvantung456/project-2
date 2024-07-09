@@ -1,9 +1,35 @@
 package jdbc.repository.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "district")
 public class DistrictEntity {
-	private Long id;  
-	private String code;  
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id; 
+	@Column(name = "code")
+	private String code;
+	@Column (name = "name")
 	private String name;
+	@OneToMany(mappedBy = "district", fetch = FetchType.LAZY)
+	private List<BuildingEntity> buildingEntities = new ArrayList<BuildingEntity>();
+	public List<BuildingEntity> getBuildingEntities() {
+		return buildingEntities;
+	}
+	public void setBuildingEntities(List<BuildingEntity> buildingEntities) {
+		this.buildingEntities = buildingEntities;
+	}
 	public Long getId() {
 		return id;
 	}

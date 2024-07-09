@@ -25,9 +25,9 @@ public class BuildingDTOConverter {
 	private ModelMapper modelMapper;
 	public BuildingDTO toBuildingDTO (BuildingEntity buildingEntity) {
 		BuildingDTO result = modelMapper.map(buildingEntity, BuildingDTO.class);
-		long districtId = buildingEntity.getDistrictid();
-		DistrictEntity districtEntity = districtRepository.findById(districtId); 
-		result.setAddress(buildingEntity.getStreet() + buildingEntity.getWard() + buildingEntity.getDistrictid() + districtEntity.getName());
+//		long districtId = buildingEntity.getDistrictid();
+//		DistrictEntity districtEntity = districtRepository.findById(districtId); 
+//		result.setAddress(buildingEntity.getStreet() + buildingEntity.getWard() + buildingEntity.getDistrictid() + districtEntity.getName());
 		long Id = buildingEntity.getId();
 		List<RentAreaEntity> rentAreaRepositories = rentAreaRepository.findByBuildingId(Id);
 		String rentArea = rentAreaRepositories.stream().map(it -> it.getValue().toString()).collect(Collectors.joining(", "));

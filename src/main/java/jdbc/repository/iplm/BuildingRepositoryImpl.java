@@ -69,10 +69,10 @@ public class BuildingRepositoryImpl implements BuildingReponsitory {
 				typeCodeTemp.add("'" + str + "'");
 			}
 			where.append("AND renttype.code IN (" + String.join(",", typeCodeTemp) + ") ");
-		}
+		} 
 		Long areaFrom = buildingSearchBuilder.getAreaFrom();
 		if (areaFrom != null) {
-			where.append("AND rentarea.value >= " + areaFrom + " ");
+			where.append("AND rentarea.value >= " + areaFrom + " "); 
 		}
 		Long areaTo = buildingSearchBuilder.getAreaTo();
 		if (areaTo != null) {
@@ -105,7 +105,7 @@ public class BuildingRepositoryImpl implements BuildingReponsitory {
 			while (resultSet.next()) {
 				BuildingEntity buildingEntity = new BuildingEntity();
 				buildingEntity.setBrokeragefee(resultSet.getLong("brokeragefee"));
-				buildingEntity.setDistrictid(resultSet.getLong("districtid"));
+//				buildingEntity.setDistrictid(resultSet.getLong("districtid"));
 				buildingEntity.setFloorArea(resultSet.getLong("floorarea"));
 				buildingEntity.setId(resultSet.getLong("id"));
 				buildingEntity.setName(resultSet.getString("name"));
