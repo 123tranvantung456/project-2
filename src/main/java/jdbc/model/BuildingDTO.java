@@ -11,6 +11,13 @@ public class BuildingDTO {
 	private Long rentPrice;
 	private String serviceFee;
 	private Long brokerageFee;
+	private Long districtId;
+	public Long getDistrictId() {
+		return districtId;
+	}
+	public void setDistrictId(Long districtId) {
+		this.districtId = districtId;
+	}
 	public String getName() {
 		return name;
 	}
