@@ -8,7 +8,7 @@ public class BuildingDTO {
 	private Long floorArea;
 	private String rentArea;
 	private String emptyArea;
-	private Long rentPrice;
+	private Long rentPrice; 
 	private String serviceFee;
 	private Long brokerageFee;
 	public String getName() {
