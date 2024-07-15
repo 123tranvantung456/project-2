@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import jdbc.converter.BuildingDTOConverter;
-import jdbc.converter.BuildingSearchBuilderConverter;
 import jdbc.model.BuildingDTO;
 import jdbc.repository.BuildingReponsitory;
 import jdbc.repository.entity.BuildingEntity;
@@ -19,12 +18,10 @@ public class BuildingServiceImpl implements BuildingService{
 	private BuildingReponsitory buildingReponsitory;
 	@Autowired
 	private BuildingDTOConverter buildingDTOConverter;
-	@Autowired 
-	private BuildingSearchBuilderConverter buildingSearchBuilderConverter;
 	
 	@Override
 	public List<BuildingDTO> findAll(Map<String, Object> map, List<String> typeCode) {
-		List<BuildingEntity> buildingEntities = buildingReponsitory.findAll(buildingSearchBuilderConverter.toBuildingSearchBuilder(map, typeCode));
+		List<BuildingEntity> buildingEntities = buildingReponsitory.findAll();
 		List<BuildingDTO> results = new ArrayList<BuildingDTO>();
 		for (BuildingEntity buildingEntity : buildingEntities) {
 			BuildingDTO buildingDTO = buildingDTOConverter.toBuildingDTO(buildingEntity);

@@ -1,4 +1,4 @@
-package jdbc.repository.iplm;
+package jdbc.repository.custom.impl;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -11,11 +11,11 @@ import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 
 import jdbc.Builder.BuildingSearchBuilder;
-import jdbc.repository.BuildingReponsitory;
+import jdbc.repository.custom.BuildingRepositoryCustom;
 import jdbc.repository.entity.BuildingEntity;
 
 @Repository 
-public class JDBC_BuildingRepositoryImpl implements BuildingReponsitory {
+public class JDBC_BuildingRepositoryImpl implements BuildingRepositoryCustom{
 	@PersistenceContext
 	private EntityManager entityManager;
 	public void joinTable(BuildingSearchBuilder buildingSearchBuilder, StringBuilder sql) {

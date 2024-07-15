@@ -1,6 +1,7 @@
 package jdbc.model;
 
 public class BuildingDTO {
+	private Long id;
 	private String name;
 	private String address;
 	private String managerName;
@@ -12,6 +13,12 @@ public class BuildingDTO {
 	private String serviceFee;
 	private Long brokerageFee;
 	private Long districtId;
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public Long getDistrictId() {
 		return districtId;
 	}
