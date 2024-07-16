@@ -7,5 +7,8 @@ import jdbc.repository.entity.BuildingEntity;
 
 public interface BuildingReponsitory {
 	List<BuildingEntity> findAll(BuildingSearchBuilder buildingSearchBuilder);
+	void create(BuildingEntity buildingEntity);
+	void update(BuildingEntity buildingEntity);
+	void delete (List<Long> ids);
 } 
   

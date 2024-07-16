@@ -8,12 +8,13 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import jdbc.Builder.BuildingSearchBuilder;
 import jdbc.repository.BuildingReponsitory;
 import jdbc.repository.entity.BuildingEntity;
-
+@Primary
 @Repository 
 public class JDBC_BuildingRepositoryImpl implements BuildingReponsitory {
 	@PersistenceContext
@@ -52,7 +53,7 @@ public class JDBC_BuildingRepositoryImpl implements BuildingReponsitory {
 							where.append("AND b." + fieldName + " like '%" + value + "%' ");
 						}
 					}
-				}
+				} 
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -102,5 +103,26 @@ public class JDBC_BuildingRepositoryImpl implements BuildingReponsitory {
 		sql.append("GROUP BY b.id");
 		Query query = entityManager.createNativeQuery(sql.toString(), BuildingEntity.class);
 		return query.getResultList();
+	}
+
+	@Override
+	public void create(BuildingEntity buildingEntity) {
+		entityManager.persist(buildingEntity);
+	}
+
+	@Override
+	public void update(BuildingEntity buildingEntity) {
+		entityManager.merge(buildingEntity);
+	}
+
+	private void deleteOne (Long id) {	
+		BuildingEntity buildingEntity = entityManager.find(BuildingEntity.class, id);
+		entityManager.remove(buildingEntity);
+	}
+	@Override
+	public void delete(List<Long> ids) {
+		for(Long id : ids) {
+			deleteOne(id);
+		}
 	} 
 }

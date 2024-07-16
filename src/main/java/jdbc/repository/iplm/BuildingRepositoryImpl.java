@@ -6,14 +6,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
-
 
 import jdbc.Builder.BuildingSearchBuilder;
 import jdbc.repository.BuildingReponsitory;
 import jdbc.repository.entity.BuildingEntity;
-@Primary
 @Repository
 public class BuildingRepositoryImpl implements BuildingReponsitory{
 	@PersistenceContext
@@ -29,6 +26,21 @@ public class BuildingRepositoryImpl implements BuildingReponsitory{
 		String sql = "SELECT * FROM Building b WHERE b.name like '%building%'";
 		Query query = entityManager.createNativeQuery(sql, BuildingEntity.class);
 		return query.getResultList();
+	}
+	@Override
+	public void create(BuildingEntity buildingEntity) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void update(BuildingEntity buildingEntity) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void delete(List<Long> ids) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

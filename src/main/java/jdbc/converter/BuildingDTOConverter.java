@@ -11,7 +11,7 @@ import jdbc.model.BuildingDTO;
 import jdbc.repository.entity.BuildingEntity;
 import jdbc.repository.entity.RentAreaEntity;
 
-@Component
+@Component 
 public class BuildingDTOConverter {
 	@Autowired
 	private ModelMapper modelMapper;

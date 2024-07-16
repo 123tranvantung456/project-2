@@ -28,7 +28,7 @@ public class BuildingEntity {
 	private String ward;
 //	@Column(name = "districtid")
 //	private Long districtid;
-	@Column(name = "floorArea")
+	@Column(name = "floorarea")
 	private Long floorArea;
 	@Column(name = "rentprice")  
 	private Long rentprice;
@@ -36,6 +36,8 @@ public class BuildingEntity {
 	private String servicefee;
 	@Column(name = "brokeragefee")
 	private Long brokeragefee;
+	@Column(name = "numberofbasement")
+	private Integer numberOfBasement;
 	@ManyToOne
 	@JoinColumn(name = "districtid")
 	private DistrictEntity district;
@@ -105,6 +107,12 @@ public class BuildingEntity {
 		return brokeragefee;
 	}
 	public void setBrokeragefee(Long brokeragefee) {
-		this.brokeragefee = brokeragefee;
+		this.brokeragefee = brokeragefee; 
+	}
+	public Integer getNumberOfBasement() {
+		return numberOfBasement;
+	}
+	public void setNumberOfBasement(Integer numberOfBasement) {
+		this.numberOfBasement = numberOfBasement;
 	}
 }
