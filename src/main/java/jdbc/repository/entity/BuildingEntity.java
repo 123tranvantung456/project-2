@@ -1,6 +1,7 @@
 package jdbc.repository.entity;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.persistence.Column;
@@ -28,7 +29,7 @@ public class BuildingEntity {
 	private String ward;
 //	@Column(name = "districtid")
 //	private Long districtid;
-	@Column(name = "floorArea")
+	@Column(name = "floorarea")
 	private Long floorArea;
 	@Column(name = "rentprice")  
 	private Long rentprice;

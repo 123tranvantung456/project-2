@@ -6,5 +6,6 @@ import jdbc.Builder.BuildingSearchBuilder;
 import jdbc.repository.entity.BuildingEntity;
 
 public interface BuildingRepositoryCustom {
-	List<BuildingEntity> findAll(BuildingSearchBuilder buildingSearchBuilder) ;
+	List<BuildingEntity> findAll(BuildingSearchBuilder buildingSearchBuilder);  
 }
+ 
