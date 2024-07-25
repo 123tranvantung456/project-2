@@ -26,7 +26,6 @@ public class BuildingSearchBuilderConverter {
 														.setStreet(MapUtil.getObject(params, "street", String.class))
 														.setTypeCode(typeCode)
 														.setWard(MapUtil.getObject(params, "ward", String.class))
-														.setWard(null)
 														.build();	
 		return buildingSearchBuilder;
 	}
